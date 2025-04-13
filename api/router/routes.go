@@ -1,8 +1,8 @@
 package router
 
 import (
-	"go_docker_api/api/handlers/employee"
-	"go_docker_api/api/handlers/handlerutil"
+	"go_docker_api/api/handler/employee"
+	"go_docker_api/api/handler/handlerutil"
 
 	"github.com/gin-gonic/gin"
 )
