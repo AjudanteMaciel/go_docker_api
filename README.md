@@ -3,6 +3,9 @@
 This is a personal project to study REST APIs with Go and Docker.
 For study purposes, some files may have explanatory comments.
 
+references:
+    https://github.com/arthur404dev/gopportunities - Repository used as a reference for this project.
+
 commands:
     go:
         go mod <project_name> init                                                  --> create the go.mod file
