@@ -5,21 +5,24 @@ For study purposes, some files may have explanatory comments.
 
 commands:
     go:
-        go mod <project_name> init --> create the go.mod file
-        go get <github.com/package_name> --> packge download
+        go mod <project_name> init                                                  --> create the go.mod file
+        go get <github.com/package_name>                                            --> packge download
     docker:
-        docker compose up -d <countainer_name> --> build docker container
+        docker compose up -d <countainer_name>                                      --> build docker container
 
 tools:
     migrations: github.com/pressly/goose
 
-        commands:
-            go create <migration_name> sql --> create a migration file .sql
-
+        make sure to create the .env variable
         .env variables: 
-            GOOSE_DRIVER=postgres --> the database driver to use
-            GOOSE_DBSTRING="postgresql://postgres:0000@localhost:5433/postgres" --> the database connection string
-            GOOSE_MIGRATION_DIR=./migrations --> the directory containing the migration files (default: .)
+            GOOSE_DRIVER=postgres                                                   --> the database driver to use
+            GOOSE_DBSTRING="postgresql://postgres:0000@localhost:5433/postgres"     --> the database connection string
+            GOOSE_MIGRATION_DIR=./migrations                                        --> the directory containing the migration files (default: .)
+
+        commands:
+            goose create <migration_name> sql                                       --> create a migration file .sql
+            goose up                                                                --> up
+            goose down                                                              --> down
 
 
 libs:

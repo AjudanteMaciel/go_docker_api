@@ -1,39 +1,28 @@
 package main
 
 import (
-	"go_docker_api/config"
-
-	"github.com/gin-gonic/gin"
+	"go_docker_api/api/router"
+	"go_docker_api/configs"
 )
 
-var logger *config.Logger
+var logger *configs.Logger
 
 func main() {
 
-	logger = config.GetLogger("main")
+	// Get logger
+	logger = configs.GetLogger("main")
+	logger.Info("Starting the application...")
 
-	// Initialze configs	
-	err := config.Init()
+	// Initialze configs
+	logger.Info("Initializing configs...")
+	err := configs.Init()
 
+	// Check if there was an error initializing configs
 	if err != nil {
 		logger.Errorf("Error initializing configs: %v", err)
 		return
 	}
 
-	// := is a short variable declaration operator. It declares a variable and assigns a value to it.
-	// The type of the variable is inferred from the value on the right-hand side.
-	// only works inside functions
-	server := gin.Default()
-
-	// like C, Go uses the & operator to get the address of a variable and the * operator to dereference a pointer.
-	// * is a pointer to a type. It is used to store the memory address of a value.
-	// & is the address of operator. It returns the memory address of a value.
-	server.GET("/ping", func(ctx *gin.Context) {
-		ctx.JSON(200, gin.H{
-			"message": "pong",
-		})
-	})
-
-	server.Run(":8080")
+	router.Initialze()
 
 }

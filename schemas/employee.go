@@ -6,6 +6,8 @@ import (
 
 type Employee struct {
 	gorm.Model
-	Name  string `gorm:"not null"`
-	Roles []Role `gorm:"many2many:employee_roles;"`
+	Name    string `gorm:"not null"`
+	Email   string `gorm:"not null;unique"`
+	RoleID  uint   `gorm:"not null"`
+	StateID uint   `gorm:"not null"`
 }
