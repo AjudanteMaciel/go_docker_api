@@ -5,7 +5,7 @@ For study purposes, some files may have explanatory comments.
 
 references:
     https://github.com/arthur404dev/gopportunities - Repository used as a reference for this project.
-
+```
 commands:
     go:
         go mod <project_name> init                                                  --> create the go.mod file
@@ -77,3 +77,4 @@ Go project file structurte:
 ├── go.mod                                  # Go dependency manager file
 ├── go.sum                                  # Checksum file for Go dependencies
 └── Makefile                                # Build and task automation file (optional)
+```
